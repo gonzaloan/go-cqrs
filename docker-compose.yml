@@ -10,3 +10,6 @@ services:
     restart: always
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
+  nats:
+    image: "nats-streaming:0.9.2"
+    restart: always
