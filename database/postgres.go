@@ -36,7 +36,7 @@ func (repo *PostgresRepository) ListFeeds(ctx context.Context) ([]*models.Feed, 
 		return nil, err
 	}
 	defer rows.Close()
-	feeds := []*models.Feed
+	var feeds []*models.Feed
 	for rows.Next() {
 		feed := &models.Feed{}
 		if err := rows.Scan(&feed.ID, &feed.Title, &feed.Description, &feed.CreatedAt); err != nil {
